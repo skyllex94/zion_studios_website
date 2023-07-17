@@ -6,10 +6,12 @@ import appStore from "./assets/app-store.png";
 import mainImage from "./assets/landing-image.gif";
 import Footer from "./components/Footer";
 import Features from "./components/Features";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div>
+      <Navbar />
       <div>
         <div className="bg-white pt-20 pb-20 lg:pt-20">
           <div className="m-auto flex flex-col md:flex-row lg:flex-row xl:flex-row justify-center px-6 xl:container md:px-12 lg:px-6">
