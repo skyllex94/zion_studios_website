@@ -7,7 +7,7 @@ import { MdOutlineLockOpen } from "react-icons/md";
 
 export default function Features() {
   return (
-    <div className="bg-slate-400 px-3 md:lg:xl:px-40 border-t border-b py-40 bg-opacity-10">
+    <div className="bg-slate-300 px-3 md:lg:xl:px-64 border-t border-b py-40 bg-opacity-10">
       <div className="grid grid-cols-1 md:lg:xl:grid-cols-3 group bg-white shadow-xl shadow-neutral-100 border ">
         <div className="p-10 flex flex-col items-center text-center group md:lg:xl:border-r md:lg:xl:border-b hover:bg-slate-50 ">
           <span className="p-5 rounded-full bg-gray-500 text-white shadow-lg shadow-red-200">
