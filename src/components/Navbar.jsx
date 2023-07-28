@@ -6,6 +6,7 @@ import {
   Button,
   IconButton,
 } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 export default function Example() {
   const [openNav, setOpenNav] = useState(false);
@@ -74,13 +75,16 @@ export default function Example() {
         </Typography>
         <div className="flex items-end">
           <div className="hidden lg:block">{navList}</div>
-          <Button
-            variant="gradient"
-            size="sm"
-            className="hidden lg:inline-block ml-7"
-          >
-            <span>Our Apps</span>
-          </Button>
+          <Link to="/apps">
+            <Button
+              variant="gradient"
+              size="sm"
+              className="hidden lg:inline-block ml-7"
+            >
+              <span>Our Apps</span>
+            </Button>
+          </Link>
+
           <IconButton
             variant="text"
             className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
@@ -123,9 +127,12 @@ export default function Example() {
       <MobileNav open={openNav}>
         <div className="container mx-auto">
           {navList}
-          <Button variant="gradient" size="sm" fullWidth className="mb-2">
-            <span>Our Apps</span>
-          </Button>
+
+          <Link to="/apps">
+            <Button variant="gradient" size="sm" fullWidth className="mb-2">
+              <span>Our Apps</span>
+            </Button>
+          </Link>
         </div>
       </MobileNav>
     </Navbar>

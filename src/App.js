@@ -1,19 +1,15 @@
-import * as React from "react";
-
-import "./App.css";
-
-import { Route, Router, Routes } from "react-router";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "./pages/Main";
 import CurrentApps from "./pages/CurrentApps";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/apps" element={<CurrentApps />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
