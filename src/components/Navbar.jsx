@@ -27,7 +27,7 @@ export default function Example() {
         className="p-1 font-normal"
       >
         <a href="!#" className="flex items-end">
-          Pages
+          Mission
         </a>
       </Typography>
       <Typography
@@ -37,27 +37,7 @@ export default function Example() {
         className="p-1 font-normal"
       >
         <a href="!#" className="flex items-end">
-          Account
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <a href="!#" className="flex items-end">
-          Blocks
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <a href="!#" className="flex items-end">
-          Docs
+          About
         </a>
       </Typography>
     </ul>
@@ -66,13 +46,15 @@ export default function Example() {
   return (
     <Navbar className="mx-auto py-2 mt-5 pt-4 lg:px-8 lg:py-4">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-        <Typography
-          as="a"
-          href="#"
-          className="mr-4 cursor-pointer py-1.5 font-medium "
-        >
-          Zion Studios
-        </Typography>
+        <Link to={"/"}>
+          <Typography
+            as="a"
+            href="#"
+            className="mr-4 cursor-pointer py-1.5 font-medium "
+          >
+            Zion Studios
+          </Typography>
+        </Link>
         <div className="flex items-end">
           <div className="hidden lg:block">{navList}</div>
           <Link to="/apps">
