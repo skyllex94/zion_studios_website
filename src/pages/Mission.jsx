@@ -1,7 +1,5 @@
-import appStore from "../assets/app-store.png";
 import missionImg from "../assets/mission.jpg";
 import Footer from "../components/Footer";
-import Features from "../components/Features";
 import Navbar from "../components/Navbar";
 
 function Mission() {
@@ -47,7 +45,6 @@ function Mission() {
           </div>
         </div>
       </div>
-      <Features />
       <Footer />
     </div>
   );

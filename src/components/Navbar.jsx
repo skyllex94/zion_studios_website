@@ -31,8 +31,8 @@ export default function Example() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="!#" className="flex items-end">
-          About
+        <a href="/projects" className="flex items-end">
+          Future Projects
         </a>
       </Typography>
     </ul>
