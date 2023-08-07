@@ -31,9 +31,9 @@ export default function Example() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="/projects" className="flex items-end">
+        <Link to="/projects" className="flex items-end">
           Future Projects
-        </a>
+        </Link>
       </Typography>
     </ul>
   );
