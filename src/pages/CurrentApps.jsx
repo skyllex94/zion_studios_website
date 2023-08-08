@@ -1,7 +1,7 @@
 import appStore from "../assets/app-store.png";
 import mainImage from "../assets/app-image.jpg";
 import Footer from "../components/Footer";
-import Features from "../components/Features";
+import FeaturesVPN from "../components/FeaturesVPN";
 import Navbar from "../components/Navbar";
 
 function CurrentApps() {
@@ -72,7 +72,7 @@ function CurrentApps() {
           </div>
         </div>
       </div>
-      <Features />
+      <FeaturesVPN />
       <Footer />
     </div>
   );
