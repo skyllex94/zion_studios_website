@@ -41,7 +41,7 @@ export default function ContactsModal({ setShowModal }) {
                   className="text-md mb-2 mr-3 block  text-gray-700"
                   htmlFor="category_name"
                 >
-                  <b>Main Email: </b> ks_studios94@yahoo.com
+                  <b>Main Email: </b> zionstudiosapps@gmail.com
                 </label>
               </div>
 
