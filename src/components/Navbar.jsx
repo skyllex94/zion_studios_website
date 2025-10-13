@@ -25,35 +25,35 @@ export default function Navbar() {
     },
     {
       name: "PDF Document Editor: Kudo AI",
-      link: "https://apps.apple.com/us/app/pdf-document-editor-kudo-ai/id6445884062",
+      link: "https://apps.apple.com/sn/app/pdf-document-editor-kudo-ai/id6745721395?platform=iphone",
     },
     {
       name: "GuardMe: Who Touched My Phone",
-      link: "https://apps.apple.com/us/app/guardme-who-touched-my-phone/id6743700095",
+      link: "https://apps.apple.com/us/app/guardme-who-touched-my-phone/id6743700095?platform=iphone",
     },
     {
       name: "Find Device Tracker: AccuFind",
-      link: "https://apps.apple.com/us/app/find-device-tracker-accufind/id6470138524",
+      link: "https://apps.apple.com/us/app/find-device-tracker-accufind/id6741714865?platform=iphone",
     },
     {
       name: "Brown Noise for Sleep: Gamma",
-      link: "https://apps.apple.com/us/app/brown-noise-for-sleep-gamma/id6470138525",
+      link: "https://apps.apple.com/us/app/brown-noise-for-sleep-gamma/id6741171503?platform=iphone",
     },
     {
       name: "Werewolf - Mafia Offline Game",
-      link: "https://apps.apple.com/us/app/werewolf-mafia-offline-game/id6470138526",
+      link: "https://apps.apple.com/us/app/werewolf-mafia-offline-game/id6738326023?platform=iphone",
     },
     {
       name: "Electronic Signature Creator",
-      link: "https://apps.apple.com/us/app/electronic-signature-creator/id6470138527",
+      link: "https://apps.apple.com/us/app/electronic-signature-creator/id6502412936?platform=iphone",
     },
     {
       name: "Water Eject Airpods: WaterDrop",
-      link: "https://apps.apple.com/us/app/water-eject-airpods-waterdrop/id6470138528",
+      link: "https://apps.apple.com/us/app/water-eject-airpods-waterdrop/id6449911513?platform=iphone",
     },
     {
       name: "VPN Proxy Master Secure Shield",
-      link: "https://apps.apple.com/us/app/vpn-proxy-master-secure-shield/id1459783875",
+      link: "https://apps.apple.com/us/app/vpn-proxy-master-secure-shield/id1459783875?platform=iphone",
     },
   ];
 

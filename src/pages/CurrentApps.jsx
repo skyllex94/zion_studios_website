@@ -1,6 +1,16 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+// Import app icons
+import accufindIcon from "../assets/icons/accufind.png";
+import esignIcon from "../assets/icons/esign.jpg";
+import gammaIcon from "../assets/icons/gamma.jpg";
+import guardmeIcon from "../assets/icons/guardme.jpg";
+import kudoIcon from "../assets/icons/kudo.png";
+import vpnIcon from "../assets/icons/vpn_icon.png";
+import waterdropIcon from "../assets/icons/waterdrop.jpg";
+import werewolfIcon from "../assets/icons/werewolf.jpeg";
+
 const apps = [
   {
     id: 1,
@@ -9,7 +19,8 @@ const apps = [
     description:
       "Advanced PDF editing tool with AI-powered features for document management, editing, and collaboration.",
     appStoreUrl:
-      "https://apps.apple.com/us/app/pdf-document-editor-kudo-ai/id6445884062",
+      "https://apps.apple.com/sn/app/pdf-document-editor-kudo-ai/id6745721395?platform=iphone",
+    icon: kudoIcon,
     features: [
       "AI-powered editing",
       "Document collaboration",
@@ -24,7 +35,8 @@ const apps = [
     description:
       "Security app that detects and alerts you when someone tries to access your phone without permission.",
     appStoreUrl:
-      "https://apps.apple.com/us/app/guardme-who-touched-my-phone/id6743700095",
+      "https://apps.apple.com/us/app/guardme-who-touched-my-phone/id6743700095?platform=iphone",
+    icon: guardmeIcon,
     features: [
       "Intrusion detection",
       "Photo capture",
@@ -39,7 +51,8 @@ const apps = [
     description:
       "Precise device tracking and location services to help you find your lost or misplaced devices quickly.",
     appStoreUrl:
-      "https://apps.apple.com/us/app/find-device-tracker-accufind/id6470138524",
+      "https://apps.apple.com/us/app/find-device-tracker-accufind/id6741714865?platform=iphone",
+    icon: accufindIcon,
     features: [
       "GPS tracking",
       "Location history",
@@ -54,7 +67,8 @@ const apps = [
     description:
       "High-quality brown noise generator designed to help you relax, focus, and get better sleep.",
     appStoreUrl:
-      "https://apps.apple.com/us/app/brown-noise-for-sleep-gamma/id6470138525",
+      "https://apps.apple.com/us/app/brown-noise-for-sleep-gamma/id6741171503?platform=iphone",
+    icon: gammaIcon,
     features: [
       "Multiple noise types",
       "Sleep timer",
@@ -69,7 +83,8 @@ const apps = [
     description:
       "Classic social deduction game perfect for parties and gatherings. Play offline with friends and family.",
     appStoreUrl:
-      "https://apps.apple.com/us/app/werewolf-mafia-offline-game/id6470138526",
+      "https://apps.apple.com/us/app/werewolf-mafia-offline-game/id6738326023?platform=iphone",
+    icon: werewolfIcon,
     features: [
       "Offline multiplayer",
       "Multiple roles",
@@ -84,13 +99,9 @@ const apps = [
     description:
       "Create legally binding electronic signatures for documents with ease and security.",
     appStoreUrl:
-      "https://apps.apple.com/us/app/electronic-signature-creator/id6470138527",
-    features: [
-      "Legal signatures",
-      "Document management",
-      "Cloud storage",
-      "Mobile signing",
-    ],
+      "https://apps.apple.com/us/app/electronic-signature-creator/id6502412936?platform=iphone",
+    icon: esignIcon,
+    features: ["Legal signatures", "Document management", "Mobile signing"],
   },
   {
     id: 7,
@@ -99,7 +110,8 @@ const apps = [
     description:
       "Safely eject water from your AirPods and other audio devices with advanced sound wave technology.",
     appStoreUrl:
-      "https://apps.apple.com/us/app/water-eject-airpods-waterdrop/id6470138528",
+      "https://apps.apple.com/us/app/water-eject-airpods-waterdrop/id6449911513?platform=iphone",
+    icon: waterdropIcon,
     features: [
       "Water ejection technology",
       "Multiple device support",
@@ -114,7 +126,8 @@ const apps = [
     description:
       "Advanced VPN service with ad-blocking capabilities for secure and private browsing.",
     appStoreUrl:
-      "https://apps.apple.com/us/app/vpn-proxy-master-secure-shield/id1459783875",
+      "https://apps.apple.com/us/app/vpn-proxy-master-secure-shield/id1459783875?platform=iphone",
+    icon: vpnIcon,
     features: [
       "Secure VPN connection",
       "Ad-blocking",
@@ -146,13 +159,29 @@ function CurrentApps() {
                 key={app.id}
                 className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6"
               >
-                <div className="mb-4">
-                  <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full mb-3">
-                    {app.category}
-                  </span>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {app.name}
-                  </h3>
+                <div className="mb-6">
+                  {/* Icon and Title Row */}
+                  <div className="flex items-center mb-3">
+                    {app.icon && (
+                      <img
+                        src={app.icon}
+                        alt={`${app.name} icon`}
+                        className="w-12 h-12 mr-4 rounded-lg object-cover flex-shrink-0"
+                      />
+                    )}
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-gray-900 leading-tight">
+                        {app.name}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Category Badge */}
+                  <div className="mb-4">
+                    <span className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-sm">
+                      {app.category}
+                    </span>
+                  </div>
                 </div>
 
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
