@@ -12,24 +12,6 @@ export default function Navbar() {
     setIsAboutOpen(false);
   };
 
-  const toggleProducts = () => {
-    if (isProductsOpen) {
-      setIsProductsOpen(false);
-    } else {
-      closeAllDropdowns();
-      setIsProductsOpen(true);
-    }
-  };
-
-  const toggleAbout = () => {
-    if (isAboutOpen) {
-      setIsAboutOpen(false);
-    } else {
-      closeAllDropdowns();
-      setIsAboutOpen(true);
-    }
-  };
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
