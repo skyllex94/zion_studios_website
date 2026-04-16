@@ -22,9 +22,7 @@ export default function Footer() {
                 Zion Studios
               </h3>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Crafting exceptional iOS applications that enhance lives
-                worldwide. We develop innovative mobile solutions across
-                productivity, security, health, gaming, and utilities.
+                Building powerful websites that help contractors get more customers and reviews. We create functional, SEO-optimized sites that turn visitors into leads.
               </p>
               <div className="flex space-x-4">
                 <a
