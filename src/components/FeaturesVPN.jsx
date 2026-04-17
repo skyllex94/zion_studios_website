@@ -16,7 +16,7 @@ export default function FeaturesVPN() {
           </p>
           <p className="mt-2 text-sm text-slate-500">
             Our VPN is focused and made to serve iOS users and connect quickly
-            to various locations across the globe.
+            to various locations across the globe
           </p>
         </div>
 
