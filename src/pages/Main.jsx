@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import trustpilotIcon from "../assets/social-icons/trustpilot.webp";
-import googleIcon from "../assets/social-icons/google.webp";
-import fbIcon from "../assets/social-icons/fb.webp";
 import heroImage from "../assets/hero/hero.webp";
 import siteThumbnail from "../assets/thumbnails/site_thumbnail1.png";
 
@@ -18,30 +14,6 @@ function Main() {
     setIsModalOpen(false);
     setFormData({ name: "", email: "" });
   };
-
-  const featuredApps = [
-    {
-      name: "PDF Document Editor: Kudo AI",
-      category: "Productivity",
-      description: "AI-powered document creation and editing",
-      link: "https://apps.apple.com/sn/app/pdf-document-editor-kudo-ai/id6745721395?platform=iphone",
-      color: "from-blue-500 to-purple-600",
-    },
-    {
-      name: "GuardMe: Who Touched My Phone",
-      category: "Security",
-      description: "Advanced phone security and intrusion detection",
-      link: "https://apps.apple.com/us/app/guardme-who-touched-my-phone/id6743700095?platform=iphone",
-      color: "from-red-500 to-orange-500",
-    },
-    {
-      name: "Find Device Tracker: AccuFind",
-      category: "Utilities",
-      description: "Precise device tracking and location services",
-      link: "https://apps.apple.com/us/app/find-device-tracker-accufind/id6741714865?platform=iphone",
-      color: "from-green-500 to-teal-500",
-    },
-  ];
 
   return (
     <>
