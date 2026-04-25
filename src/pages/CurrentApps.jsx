@@ -141,11 +141,11 @@ function CurrentApps() {
   return (
     <div>
       <Navbar />
-      <div className="bg-gray-50 py-20">
+      <div className="bg-gray-50 pt-28 lg:pt-32 py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-              Our Apps
+              Mobile Apps
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover our collection of innovative mobile applications designed

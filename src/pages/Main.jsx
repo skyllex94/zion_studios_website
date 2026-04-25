@@ -67,19 +67,27 @@ function Main() {
                   </span>
                 </div>
 
-                <a
-                  href="https://calendly.com/kkanchev94/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-300 shadow-lg"
-                >
-                  Book A Call
-                </a>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="https://calendly.com/kkanchev94/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-300 shadow-lg"
+                  >
+                    Book A Call
+                  </a>
+                  <a
+                    href="mailto:zionstudiosapps@gmail.com"
+                    className="inline-block bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 border border-gray-300"
+                  >
+                    Contact Us
+                  </a>
+                </div>
               </div>
 
-              {/* Right - Hero Image (30%) */}
-              <div className="lg:w-[30%] flex justify-center lg:justify-end">
-<img 
+{/* Right - Hero Image (30%) */}
+              <div className="lg:w-[30%] hidden lg:flex justify-center lg:justify-end">
+              <img
                   src={heroImage} 
                   alt="Hero" 
                   className="w-full max-w-[200px] lg:max-w-[240px] object-contain animate-float mt-8 lg:mt-0" 
