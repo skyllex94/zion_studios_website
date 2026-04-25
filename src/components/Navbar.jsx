@@ -19,8 +19,9 @@ export default function Navbar() {
   }, []);
 
   const directLinks = [
-    { name: "Mobile Apps", link: "/apps" },
+    { name: "Mobile Development", link: "/apps" },
     { name: "Mission", link: "/mission" },
+    { name: "Contact Us", link: "/contact" },
   ];
 
   const webDevItems = [

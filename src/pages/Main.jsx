@@ -1,20 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import heroImage from "../assets/hero/hero.webp";
 import siteThumbnail from "../assets/thumbnails/site_thumbnail1.png";
 
 function Main() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: "", email: "" });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Thank you ${formData.name}! We'll contact you at ${formData.email} soon.`);
-    setIsModalOpen(false);
-    setFormData({ name: "", email: "" });
-  };
-
   return (
     <>
       <Navbar />
@@ -31,8 +22,7 @@ function Main() {
                   <span className="block">& Small Businesses</span>
                 </h1>
                 <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
-                  Marketing isn't rocket science.<br className="hidden md:block" />
-                  No agency... (including ours) has the miracle solution to all your problems. We'll give you the tools to win but you need to commit to using them!
+                  We build modern, professional websites that represent your brand in the best possible way. We set you up with back-end solutions to see and gather leads so you can make the most out of your website—easy and convenient.
                 </p>
 
                 {/* Team/People Images */}
@@ -63,7 +53,7 @@ function Main() {
                     </div>
                   </div>
                   <span className="ml-4 text-sm text-gray-600 font-medium">
-                    Trusted by <strong className="text-gray-900">15+</strong> clients
+                    Trusted by <strong className="text-gray-900">15+</strong> businesses & <strong className="text-gray-900">7000+</strong> app users
                   </span>
                 </div>
 
@@ -76,12 +66,12 @@ function Main() {
                   >
                     Book A Call
                   </a>
-                  <a
-                    href="mailto:zionstudiosapps@gmail.com"
+                  <Link
+                    to="/contact"
                     className="inline-block bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 border border-gray-300"
                   >
                     Contact Us
-                  </a>
+                  </Link>
                 </div>
               </div>
 
@@ -105,7 +95,7 @@ function Main() {
                 Simple systems that actually work
               </h2>
               <p className="text-base text-gray-600 max-w-3xl mx-auto">
-                No degrees required, just a hard hat
+                Creating functional modern websites
               </p>
             </div>
 
@@ -225,81 +215,6 @@ function Main() {
             </div>
           </div>
         </div>
-
-        {/* Book A Call Modal */}
-        {isModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsModalOpen(false)}></div>
-            <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden animate-fadeIn">
-              <div className="bg-gradient-to-r from-gray-900 to-gray-800 p-6 text-center">
-                <button 
-                  onClick={() => setIsModalOpen(false)}
-                  className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-                <div className="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
-                </div>
-                <h2 className="text-xl font-bold text-white">Book A Call</h2>
-                <p className="text-white/70 text-sm mt-1">Schedule your free consultation</p>
-              </div>
-              <div className="p-6">
-                <form onSubmit={handleSubmit}>
-                  <div className="mb-5">
-                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Your Name</label>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
-                      </div>
-                      <input
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-black focus:border-black transition-all"
-                        placeholder="John Doe"
-                      />
-                    </div>
-                  </div>
-                  <div className="mb-6">
-                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Email Address</label>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                      <input
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-black focus:border-black transition-all"
-                        placeholder="john@example.com"
-                      />
-                    </div>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-gray-900 to-gray-800 text-white py-3.5 rounded-xl font-semibold hover:from-gray-800 hover:to-gray-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-                  >
-                    Get My Free Call
-                  </button>
-                  <p className="text-center text-xs text-gray-400 mt-4">
-                    No commitment required. We'll get back to you within 24 hours.
-                  </p>
-                </form>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
       <Footer />
     </>

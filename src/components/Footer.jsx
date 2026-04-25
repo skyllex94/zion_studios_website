@@ -70,6 +70,14 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
+                    to="/contact"
+                    className="text-gray-300 hover:text-white transition-colors duration-200"
+                  >
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     to="/process"
                     className="text-gray-300 hover:text-white transition-colors duration-200"
                   >
