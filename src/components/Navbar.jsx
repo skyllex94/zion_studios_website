@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/website-icon/logo.png";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isWebDevOpen, setIsWebDevOpen] = useState(false);
+  const navRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -14,23 +15,37 @@ export default function Navbar() {
       }
     };
 
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setIsMenuOpen(false);
+        setIsWebDevOpen(false);
+      }
+    };
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    if (isMenuOpen) {
+      document.addEventListener("click", handleClickOutside);
+    }
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   const directLinks = [
-    { name: "Mobile Development", link: "/apps" },
+    { name: "Our Work", link: "/our-work" },
     { name: "Mission", link: "/mission" },
     { name: "Contact Us", link: "/contact" },
   ];
 
-  const webDevItems = [
-    { name: "Services & Pricing", link: "/services" },
+  const servicesItems = [
+    { name: "Web Design", link: "/services" },
+    { name: "Mobile Development", link: "/apps" },
     { name: "Our Process", link: "/process" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#f8f8f8] border-b border-gray-200">
+    <nav ref={navRef} className="fixed top-0 left-0 right-0 z-50 bg-[#f8f8f8] border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center">
@@ -50,7 +65,7 @@ export default function Navbar() {
               <button
                 className={`text-gray-600 hover:text-black font-medium text-sm uppercase tracking-wide transition-colors duration-200 flex items-center gap-1 py-4 ${isWebDevOpen ? "text-black" : ""}`}
               >
-                Web Development
+                Services
                 <svg
                   className={`w-3.5 h-3.5 transition-transform duration-200 ${isWebDevOpen ? "rotate-180" : ""}`}
                   fill="none"
@@ -62,7 +77,7 @@ export default function Navbar() {
               </button>
               {isWebDevOpen && (
                 <div className="absolute top-full left-0 mt-0 w-56 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-50 animate-fadeIn">
-                  {webDevItems.map((item) => (
+                  {servicesItems.map((item) => (
                     <Link
                       key={item.name}
                       to={item.link}
@@ -130,7 +145,7 @@ export default function Navbar() {
                 onClick={() => setIsWebDevOpen(!isWebDevOpen)}
                 className="flex items-center justify-between w-full text-left text-sm font-medium text-gray-600 uppercase tracking-wide py-2"
               >
-                <span>Web Development</span>
+                <span>Services</span>
                 <svg
                   className={`w-4 h-4 transition-transform ${isWebDevOpen ? "rotate-180" : ""}`}
                   fill="none"
@@ -142,7 +157,7 @@ export default function Navbar() {
               </button>
               {isWebDevOpen && (
                 <div className="bg-gray-50 rounded-lg py-2 space-y-1">
-                  {webDevItems.map((item) => (
+                  {servicesItems.map((item) => (
                     <Link
                       key={item.name}
                       to={item.link}

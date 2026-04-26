@@ -197,10 +197,39 @@ export default function Services() {
         <div className="max-w-6xl mx-auto px-4 lg:px-8 py-16">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              See What We Offer
+              Our Services
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Explore our services and choose the plan that best suits your needs.
+              Contractors are busy doing their work, so we help with your digital footprint.
+              Everything you need to turn visitors into customers.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+            {services.map((service, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center mb-4 text-gray-700">
+                  {service.icon}
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Pricing
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Choose the plan that best suits your needs.
               No contracts—cancel anytime.
             </p>
           </div>
@@ -268,37 +297,6 @@ export default function Services() {
                 </p>
               </div>
             ))}
-          </div>
-
-          <div className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Our Services
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Contractors are busy doing their work, so we help with your digital footprint.
-                Everything you need to turn visitors into customers.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.map((service, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white rounded-xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300"
-                >
-                  <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center mb-4 text-gray-700">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">

@@ -26,33 +26,33 @@ function Main() {
                 </p>
 
                 {/* Team/People Images */}
-                <div className="flex items-center mb-6">
-                  <div className="flex -space-x-3">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0 mb-6">
+                  <div className="flex -space-x-3 flex-shrink-0">
                     <img 
                       src="https://i.pravatar.cc/150?img=68" 
                       alt="Team Member" 
-                      className="w-12 h-12 rounded-full object-cover border-3 border-white shadow-lg" 
+                      className="w-12 h-12 rounded-full object-cover border-4 border-white shadow-lg flex-shrink-0" 
                     />
                     <img 
                       src="https://i.pravatar.cc/150?img=33" 
                       alt="Team Member" 
-                      className="w-12 h-12 rounded-full object-cover border-3 border-white shadow-lg" 
+                      className="w-12 h-12 rounded-full object-cover border-4 border-white shadow-lg flex-shrink-0" 
                     />
                     <img 
                       src="https://i.pravatar.cc/150?img=47" 
                       alt="Team Member" 
-                      className="w-12 h-12 rounded-full object-cover border-3 border-white shadow-lg" 
+                      className="w-12 h-12 rounded-full object-cover border-4 border-white shadow-lg flex-shrink-0" 
                     />
                     <img 
                       src="https://i.pravatar.cc/150?img=12" 
                       alt="Team Member" 
-                      className="w-12 h-12 rounded-full object-cover border-3 border-white shadow-lg" 
+                      className="w-12 h-12 rounded-full object-cover border-4 border-white shadow-lg flex-shrink-0" 
                     />
-                    <div className="w-12 h-12 rounded-full bg-gray-900 flex items-center justify-center text-white font-semibold text-xs border-3 border-white shadow-lg">
+                    <div className="w-12 h-12 rounded-full bg-gray-900 flex items-center justify-center text-white font-bold text-xs border-4 border-white shadow-lg flex-shrink-0">
                       +3
                     </div>
                   </div>
-                  <span className="ml-4 text-sm text-gray-600 font-medium">
+                  <span className="text-sm text-gray-600 font-medium sm:ml-4">
                     Trusted by <strong className="text-gray-900">15+</strong> businesses & <strong className="text-gray-900">7000+</strong> app users
                   </span>
                 </div>

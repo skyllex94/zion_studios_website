@@ -5,6 +5,7 @@ import Mission from "./pages/Mission";
 import Services from "./pages/Services";
 import Process from "./pages/Process";
 import Contact from "./pages/Contact";
+import OurWork from "./pages/OurWork";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/process" element={<Process />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/our-work" element={<OurWork />} />
       </Routes>
     </BrowserRouter>
   );
