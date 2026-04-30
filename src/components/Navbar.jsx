@@ -111,12 +111,10 @@ export default function Navbar() {
             ))}
 
             <a
-              href="https://calendly.com/kkanchev94/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="https://app.zionstudios.us"
               className="bg-black text-white font-medium text-sm uppercase tracking-wide px-8 py-3.5 rounded-full hover:bg-gray-800 transition-all duration-200 hover:shadow-lg"
             >
-              Book A Call
+              Log In
             </a>
           </div>
 
@@ -184,12 +182,10 @@ export default function Navbar() {
 
             <div className="pt-4">
               <a
-                href="https://calendly.com/kkanchev94/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://app.zionstudios.us"
                 className="block bg-black text-white font-medium text-sm uppercase tracking-wide px-6 py-4 rounded-full text-center hover:bg-gray-800 transition-all"
               >
-                Book A Call
+                Log In
               </a>
             </div>
           </div>
