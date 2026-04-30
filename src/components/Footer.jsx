@@ -157,6 +157,12 @@ export default function Footer() {
                 >
                   Privacy
                 </button>
+                <Link
+                  to="/opt-in"
+                  className="text-gray-400 hover:text-white text-sm transition-colors duration-200"
+                >
+                  Opt-In
+                </Link>
               </div>
             </div>
           </div>
