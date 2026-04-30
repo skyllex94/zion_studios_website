@@ -9,11 +9,11 @@ export default function Contact() {
       <Navbar />
       <div className="bg-gradient-to-b from-gray-50 to-white pt-28 lg:pt-32 pb-20">
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
-          {/* About Me Section */}
+          {/* About Us Section */}
           <div className="mb-16">
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                About Me
+                About Us
               </h1>
             </div>
 
@@ -57,12 +57,9 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Contact Us Section */}
+          {/* Contact Section */}
           <div>
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                Contact Us
-              </h1>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Have a question about our services? Ready to get started? We'd love to hear from you.
               </p>

@@ -35,7 +35,7 @@ export default function Navbar() {
   const directLinks = [
     { name: "Our Work", link: "/our-work" },
     { name: "Mission", link: "/mission" },
-    { name: "Contact Us", link: "/contact" },
+    { name: "About Us", link: "/contact" },
   ];
 
   const servicesItems = [
