@@ -7,6 +7,7 @@ import Process from "./pages/Process";
 import Contact from "./pages/Contact";
 import OurWork from "./pages/OurWork";
 import OptIn from "./pages/OptIn";
+import Privacy from "./pages/Privacy";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/our-work" element={<OurWork />} />
         <Route path="/opt-in" element={<OptIn />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
     </BrowserRouter>
   );

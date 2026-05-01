@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import ContactsModal from "./Modals/ContactsModal";
 import AboutModal from "./Modals/AboutModal";
-import PolicyModal from "./Modals/PolicyModal";
 
 export default function Footer() {
   const [showModal, setShowModal] = useState(false);
-  const [showAboutModal, setShowAboutModal] = useState(false);
-  const [showPolicyModal, setShowPolicyModal] = useState(false);
 
   const currentYear = new Date().getFullYear();
 
@@ -145,18 +141,12 @@ export default function Footer() {
                 >
                   About
                 </button>
-                <button
-                  onClick={() => setShowAboutModal(true)}
-                  className="text-gray-400 hover:text-white text-sm transition-colors duration-200"
-                >
-                  Contact
-                </button>
-                <button
-                  onClick={() => setShowPolicyModal(true)}
+                <Link
+                  to="/privacy"
                   className="text-gray-400 hover:text-white text-sm transition-colors duration-200"
                 >
                   Privacy
-                </button>
+                </Link>
                 <Link
                   to="/opt-in"
                   className="text-gray-400 hover:text-white text-sm transition-colors duration-200"
@@ -171,8 +161,6 @@ export default function Footer() {
 
       {/* Modals */}
       {showModal && <AboutModal setShowModal={setShowModal} />}
-      {showAboutModal && <ContactsModal setShowModal={setShowAboutModal} />}
-      {showPolicyModal && <PolicyModal setShowModal={setShowPolicyModal} />}
     </React.Fragment>
   );
 }
