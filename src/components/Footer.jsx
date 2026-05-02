@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import AboutModal from "./Modals/AboutModal";
 
 export default function Footer() {
-  const [showModal, setShowModal] = useState(false);
-
   const currentYear = new Date().getFullYear();
 
   return (
@@ -135,12 +132,6 @@ export default function Footer() {
                 &copy; {currentYear} Zion Studios LLC. All rights reserved.
               </p>
               <div className="flex items-center space-x-6 mt-4 md:mt-0">
-                <button
-                  onClick={() => setShowModal(true)}
-                  className="text-gray-400 hover:text-white text-sm transition-colors duration-200"
-                >
-                  About
-                </button>
                 <Link
                   to="/privacy"
                   className="text-gray-400 hover:text-white text-sm transition-colors duration-200"
@@ -158,9 +149,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      {/* Modals */}
-      {showModal && <AboutModal setShowModal={setShowModal} />}
     </React.Fragment>
   );
 }

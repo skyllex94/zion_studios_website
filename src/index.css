@@ -20,6 +20,89 @@
   animation: float 3s ease-in-out infinite;
 }
 
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.hero-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='104' viewBox='0 0 60 104'%3E%3Cpath d='M30 0L60 17.5V52.5L30 70L0 52.5V17.5L30 0Z' fill='none' stroke='%239ca3af' stroke-width='1.5'/%3E%3Cpath d='M30 35L60 52.5V87.5L30 105L0 87.5V52.5L30 35Z' fill='none' stroke='%239ca3af' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-size: 60px 104px;
+  opacity: 0.4;
+}
+
+@keyframes patternMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 60px 104px; }
+}
+
+.animate-pattern {
+  animation: patternMove 20s linear infinite;
+}
+
+@keyframes hexFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-15px) rotate(5deg); }
+  50% { transform: translateY(-5px) rotate(-3deg); }
+  75% { transform: translateY(-20px) rotate(3deg); }
+}
+
+.hexagon-shape {
+  width: 60px;
+  height: 52px;
+  background: none;
+  position: relative;
+  border: 2px solid rgba(156, 163, 175, 0.3);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.hexagon-float-1 {
+  animation: hexFloat 8s ease-in-out infinite;
+}
+
+.hexagon-float-2 {
+  animation: hexFloat 10s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.hexagon-float-3 {
+  animation: hexFloat 12s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

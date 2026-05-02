@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -6,91 +6,127 @@ import heroImage from "../assets/hero/hero.webp";
 import siteThumbnail from "../assets/thumbnails/site_thumbnail1.png";
 
 function Main() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const heroRef = useRef(null);
+
+  const handleMouseMove = useCallback((e) => {
+    if (heroRef.current) {
+      const rect = heroRef.current.getBoundingClientRect();
+      setMousePosition({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      });
+    }
+  }, []);
+
   return (
     <>
-      <Navbar />
-      <div>
-        {/* Hero Section - Stone Systems Style */}
-        <div className="bg-gradient-to-b from-gray-50 to-white pt-28 lg:pt-32 pb-20">
-          <div className="max-w-6xl mx-auto px-4 lg:px-8">
-            <div className="flex flex-col lg:flex-row items-start gap-16">
-              {/* Left - Text Content (70%) */}
-              <div className="lg:w-[70%] text-left">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                  <span className="block">Software Solutions</span>
-                  <span className="block">for Individuals</span>
-                  <span className="block">& Small Businesses</span>
-                </h1>
-                <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
-                  We build modern, professional websites that represent your
-                  brand in the best possible way. We set you up with back-end
-                  solutions to see and gather leads so you can make the most out
-                  of your website—easy and convenient.
-                </p>
+       <Navbar />
+       <div>
+         {/* Hero Section with Hexagon Pattern Background */}
+         <div ref={heroRef} onMouseMove={handleMouseMove} className="relative bg-white pt-28 lg:pt-32 pb-20 overflow-hidden">
+           {/* Animated Hexagon Pattern Overlay */}
+           <div className="absolute inset-0 hero-pattern animate-pattern"></div>
 
-                {/* Team/People Images */}
-                <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0 mb-6">
-                  <div className="flex -space-x-3 flex-shrink-0">
-                    <img
-                      src="https://i.pravatar.cc/150?img=68"
-                      alt="Team Member"
-                      className="w-12 h-12 rounded-full object-cover border-4 border-white shadow-lg flex-shrink-0"
-                    />
-                    <img
-                      src="https://i.pravatar.cc/150?img=33"
-                      alt="Team Member"
-                      className="w-12 h-12 rounded-full object-cover border-4 border-white shadow-lg flex-shrink-0"
-                    />
-                    <img
-                      src="https://i.pravatar.cc/150?img=47"
-                      alt="Team Member"
-                      className="w-12 h-12 rounded-full object-cover border-4 border-white shadow-lg flex-shrink-0"
-                    />
-                    <img
-                      src="https://i.pravatar.cc/150?img=12"
-                      alt="Team Member"
-                      className="w-12 h-12 rounded-full object-cover border-4 border-white shadow-lg flex-shrink-0"
-                    />
-                    <div className="w-12 h-12 rounded-full bg-gray-900 flex items-center justify-center text-white font-bold text-xs border-4 border-white shadow-lg flex-shrink-0">
-                      +3
-                    </div>
-                  </div>
-                  <span className="text-sm text-gray-600 font-medium sm:ml-4">
-                    Trusted by <strong className="text-gray-900">15+</strong>{" "}
-                    businesses &{" "}
-                    <strong className="text-gray-900">7000+</strong> app users
-                  </span>
-                </div>
+           {/* Floating Hexagon Shapes */}
+           <div className="absolute inset-0 overflow-hidden pointer-events-none">
+             <div className="hexagon-shape hexagon-float-1 absolute top-20 left-10 opacity-20"></div>
+             <div className="hexagon-shape hexagon-float-2 absolute top-40 right-20 opacity-25"></div>
+             <div className="hexagon-shape hexagon-float-3 absolute bottom-32 left-1/4 opacity-20"></div>
+             <div className="hexagon-shape hexagon-float-2 absolute top-60 right-1/3 opacity-15"></div>
+             <div className="hexagon-shape hexagon-float-1 absolute bottom-20 right-10 opacity-20"></div>
+             <div className="hexagon-shape hexagon-float-3 absolute top-32 left-1/3 opacity-15"></div>
+           </div>
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="https://calendly.com/kkanchev94/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-300 shadow-lg"
-                  >
-                    Book A Call
-                  </a>
-                  <Link
-                    to="/contact"
-                    className="inline-block bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 border border-gray-300"
-                  >
-                    Contact Us
-                  </Link>
-                </div>
-              </div>
+           {/* Mouse-following glow effect */}
+           <div
+             className="absolute inset-0 pointer-events-none"
+             style={{
+               background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(0,0,0,0.03), transparent 40%)`,
+             }}
+           />
+           {/* Subtle gradient overlay for depth */}
+           <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-white/80"></div>
 
-              {/* Right - Hero Image (30%) */}
-              <div className="lg:w-[30%] hidden lg:flex justify-center lg:justify-end">
-                <img
-                  src={heroImage}
-                  alt="Hero"
-                  className="w-full max-w-[200px] lg:max-w-[240px] object-contain animate-float mt-8 lg:mt-0"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+           <div className="max-w-6xl mx-auto px-4 lg:px-8 relative z-10">
+             <div className="flex flex-col lg:flex-row items-start gap-16">
+               {/* Left - Text Content (70%) */}
+               <div className="lg:w-[70%] text-left animate-slideInLeft">
+                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                   <span className="block">Software Solutions</span>
+                   <span className="block">for Individuals</span>
+                   <span className="block">& Small Businesses</span>
+                 </h1>
+                 <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+                   We build modern, professional websites that represent your
+                   brand in the best possible way. We set you up with back-end
+                   solutions to see and gather leads so you can make the most out
+                   of your website—easy and convenient.
+                 </p>
+
+                 {/* Team/People Images */}
+                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0 mb-6">
+                   <div className="flex -space-x-3 flex-shrink-0">
+                     <img
+                       src="https://i.pravatar.cc/150?img=68"
+                       alt="Team Member"
+                       className="w-12 h-12 rounded-full object-cover border-4 border-white shadow-lg flex-shrink-0"
+                     />
+                     <img
+                       src="https://i.pravatar.cc/150?img=33"
+                       alt="Team Member"
+                       className="w-12 h-12 rounded-full object-cover border-4 border-white shadow-lg flex-shrink-0"
+                     />
+                     <img
+                       src="https://i.pravatar.cc/150?img=47"
+                       alt="Team Member"
+                       className="w-12 h-12 rounded-full object-cover border-4 border-white shadow-lg flex-shrink-0"
+                     />
+                     <img
+                       src="https://i.pravatar.cc/150?img=12"
+                       alt="Team Member"
+                       className="w-12 h-12 rounded-full object-cover border-4 border-white shadow-lg flex-shrink-0"
+                     />
+                     <div className="w-12 h-12 rounded-full bg-gray-900 flex items-center justify-center text-white font-bold text-xs border-4 border-white shadow-lg flex-shrink-0">
+                       +3
+                     </div>
+                   </div>
+                   <span className="text-sm text-gray-600 font-medium sm:ml-4">
+                     Trusted by <strong className="text-gray-900">15+</strong>{" "}
+                     businesses &{" "}
+                     <strong className="text-gray-900">7000+</strong> app users
+                   </span>
+                 </div>
+
+                 <div className="flex flex-col sm:flex-row gap-4">
+                   <a
+                     href="https://calendly.com/kkanchev94/30min"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="inline-block bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-300 shadow-lg"
+                   >
+                     Book A Call
+                   </a>
+                   <Link
+                     to="/contact"
+                     className="inline-block bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 border border-gray-300"
+                   >
+                     Contact Us
+                   </Link>
+                 </div>
+               </div>
+
+               {/* Right - Hero Image (30%) */}
+               <div className="lg:w-[30%] hidden lg:flex justify-center lg:justify-end animate-slideInRight">
+                 <img
+                   src={heroImage}
+                   alt="Hero"
+                   className="w-full max-w-[200px] lg:max-w-[240px] object-contain animate-float mt-8 lg:mt-0"
+                 />
+               </div>
+             </div>
+           </div>
+         </div>
 
         {/* Functional Website Section */}
         <div className="bg-[#fafafa] py-20 overflow-hidden">
